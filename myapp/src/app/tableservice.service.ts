@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TableserviceService {
 
-  constructor(private http :HttpClient) { }
-  getdata(){
+  constructor(private http: HttpClient) { }
+  getdata() {
     return this.http.get("https://hn.algolia.com/api/v1/search_by_date?tags=story");
   }
 }
