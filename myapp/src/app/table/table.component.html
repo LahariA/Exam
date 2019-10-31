@@ -1,0 +1,44 @@
+<div class="container">
+    <h4 class="text-center">Engineering.ai Exam</h4>
+    <label>SearchByTitle</label>
+    <input type="text" [(ngModel)]="variable"/>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>url</th>
+        <th>created_at</th>
+        <th>author</th>
+    </tr>
+</thead>
+<tbody>
+<tr *ngFor="let t of table | search :variable" data-toggle="modal" data-target="#modalid" (click)="rowData(t)">
+    <td>{{t.title}}</td>
+    <td>{{t.url}}</td>
+    <td>{{t.created_at}}</td>
+    <td>{{t.author}}</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+
+<div class="modal" id="modalid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"> Json Data</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+          <div class="modal-body">
+        <pre>{{row | json}}</pre>
+          </div>
+          <div class="modal-footer">
+              <button type="btn btn-info" data-dismiss="modal">close</button>
+          </div>
+        </div>
+    </div>
+
+</div>
